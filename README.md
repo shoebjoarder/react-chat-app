@@ -1,50 +1,65 @@
-# Real-time chat application
+# Real-time Chat Application
 
-Real-time chat application with React.js (vite build) and Node.js with Socket.IO
+A real-time chat application built with React.js (using Vite) and Node.js, powered by Socket.IO for real-time communication.
 
 ## Demo
+
 <p align="center">
-<img width=100% src="img/demo.gif" alt="re-frame logo">
+  <img width="100%" src="img/demo.gif" alt="Demo of real-time chat application">
 </p>
 
-## 🚀 How to Get Started
+## 🚀 Getting Started
 
-- Download Node.js (v18.12.1) from [the official website](https://nodejs.org/en/blog/release/v18.12.1) and install it.
+### Prerequisites
 
-- Download [IntelliJ Ultimate](https://www.jetbrains.com/de-de/idea/download/#section=windows) or [Visual Studio Code](https://code.visualstudio.com/download) and install one of the code editors.
+- Install [Node.js](https://nodejs.org/en/download) (v14.x.x or higher)
+- A code editor such as [IntelliJ Ultimate](https://www.jetbrains.com/idea/download) or [Visual Studio Code](https://code.visualstudio.com/download)
+- [GitHub Desktop](https://desktop.github.com/) (optional, for cloning the repository)
 
-- Download [Github Desktop](https://desktop.github.com/) and install it.
+### Installation
 
-- Clone the repository using Github Desktop.
+1. Clone the repository using GitHub Desktop or the command line:
 
-- Open the project using IntelliJ IDEA or VSCode.
+   ```
+   git clone http://github.com/shoebjoarder/react-chat-app.git
+   ```
 
-- Open the terminal in the directory `client` and run the following command to install the node packages.
+2. Open the project with your code editor (IntelliJ IDEA or VSCode).
 
-  ```bash
-  npm ci
-  ```
+3. Install the client dependencies:
 
-- Run the following command in the terminal to start the vite server.
+   ```bash
+   cd client
+   npm ci
+   ```
 
-  ```bash
-  npm start
-  ```
+4. Start the Vite development server:
 
-- Open another terminal in the directory `server` and run the following command to install the node packages.
+   ```bash
+   npm start
+   ```
 
-  ```bash
-  npm ci
-  ```
+5. Install the server dependencies:
 
-- Run the following command in the terminal to start the node server.
+   ```bash
+   cd server
+   npm ci
+   ```
 
-  ```bash
-  npm start
-  ```
+6. Start the Node.js server:
 
-- Open the more than one browser and go to the following URL.
+   ```bash
+   npm start
+   ```
 
-  ```bash
-  http://localhost:5173
-  ```
+7. Open multiple browser windows and navigate to:
+
+   ```
+   http://localhost:5173
+   ```
+
+Now you can test the real-time chat application by sending messages from different browser windows.
+
+## 📝 License
+
+This project is [MIT](LICENSE) licensed.
