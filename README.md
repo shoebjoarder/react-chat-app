@@ -1,6 +1,11 @@
 # Real-time chat application
 
 Real-time chat application with React.js (vite build) and Node.js with Socket.IO
+<br/>
+
+<p align="center">
+<img width=100% src="img/demo.gif" alt="re-frame logo">
+</p>
 
 ## 🚀 How to Get Started
 
