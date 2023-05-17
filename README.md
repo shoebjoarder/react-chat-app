@@ -23,7 +23,7 @@ Real-time chat application with React.js (vite build) and Node.js with Socket.IO
 - Run the following command in the terminal to start the vite server.
 
   ```bash
-  npm run dev
+  npm start
   ```
 
 - Open another terminal in the directory `server` and run the following command to install the node packages.
