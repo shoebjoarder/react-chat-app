@@ -23,7 +23,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/dist/index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 const nicknames = new Map();
