@@ -4,6 +4,8 @@ A real-time chat application built with React.js (using Vite) and Node.js, power
 
 ## Demo
 
+[Live demo here](https://react-express-chat-app-demo.netlify.app/)
+
 <p align="center">
   <img width="100%" src="img/demo.gif" alt="Demo of real-time chat application">
 </p>
