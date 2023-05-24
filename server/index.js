@@ -2,6 +2,9 @@ const express = require("express");
 const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
+const path = require("path");
+
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 const server = http.createServer(app);
@@ -14,8 +17,13 @@ const io = new Server(server, {
 
 app.use(cors());
 
+app.use(
+  "/assets",
+  express.static(path.join(__dirname, "dist/assets"), { type: "text/css" })
+);
+
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/dist/index.html");
 });
 
 const nicknames = new Map();
@@ -31,6 +39,13 @@ io.on("connection", (socket) => {
     });
   });
 
+  socket.on("chat message", (message) => {
+    const nickname = nicknames.get(socket.id) || "Anonymous";
+    io.emit("chat message", { nickname, message });
+    // Send the message to all clients except the one that triggered the event
+    // socket.broadcast.emit("chat message", { nickname, message });
+  });
+
   socket.on("disconnect", () => {
     console.log("user disconnected");
     const nickname = nicknames.get(socket.id);
@@ -42,13 +57,6 @@ io.on("connection", (socket) => {
       nicknames.delete(socket.id);
     }
   });
-
-  socket.on("chat message", (message) => {
-    const nickname = nicknames.get(socket.id) || "Anonymous";
-    io.emit("chat message", { nickname, message });
-    // Send the message to all clients except the one that triggered the event
-    // socket.broadcast.emit("chat message", { nickname, message });
-  });
 });
 
 // io.on("connection", (socket) => {
@@ -57,6 +65,6 @@ io.on("connection", (socket) => {
 //   });
 // });
 
-server.listen(3000, () => {
-  console.log("listening on *:3000");
+server.listen(PORT, () => {
+  console.log(`listening on *:${PORT}`);
 });

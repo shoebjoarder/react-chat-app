@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import NicknameForm from "./NicknameForm";
 import "./assets/App.css";
 
-const socket = io("http://localhost:3000");
+const socket = io(`${import.meta.env.VITE_BACKEND_URL}`);
 
 function App() {
   const [messages, setMessages] = useState([]);
